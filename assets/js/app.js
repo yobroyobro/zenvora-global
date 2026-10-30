@@ -393,19 +393,30 @@
     }).join('');
   }
 
-  /* Ordre « Sélection » : produits mis en tête (1, 2, 3…), puis en avant,
-     puis le reste en alternant les rayons pour une vitrine variée. */
+  /* Mélange à chaque visite : les produits du bas remontent à tour de rôle.
+     L'ordre reste stable pendant la visite (pages « voir plus » cohérentes). */
+  var VISIT = Math.floor(Math.random() * 1e9);
+  function visitRank(s){
+    var h = VISIT ^ 2166136261;
+    for (var i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); }
+    return h >>> 0;
+  }
+  function shuffled(list, key){ return list.slice().sort(function(a, b){ return visitRank(key(a)) - visitRank(key(b)); }); }
+
+  /* Ordre « Sélection » : produits mis en tête (1, 2, 3…) à leur place fixe,
+     puis tout le reste mélangé à chaque visite, en alternant les rayons.
+     (Les produits « ★ Carrousel » gardent leur place fixe dans « Deal du jour ».) */
   function selectionOrder(list){
     var top = list.filter(function(p){ return p.top > 0; }).sort(function(a, b){ return a.top - b.top; });
-    var rest = list.filter(function(p){ return !(p.top > 0); });
-    var feat = rest.filter(function(p){ return p.featured; });
-    var other = rest.filter(function(p){ return !p.featured; });
+    var feat = [];
+    var other = shuffled(list.filter(function(p){ return !(p.top > 0); }), function(p){ return p.id; });
     if (filter.cat !== 'all') return top.concat(feat, other);
     var buckets = {}, order = [];
     other.forEach(function(p){
       if (!buckets[p.category]){ buckets[p.category] = []; order.push(p.category); }
       buckets[p.category].push(p);
     });
+    order = shuffled(order, function(k){ return 'rayon:' + k; });
     var mixed = [], more = true;
     while (more){
       more = false;
