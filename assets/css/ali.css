@@ -332,3 +332,8 @@ html.js-on .hero-head > *{ animation:none; }
   .hero-head{ min-width:0; overflow:hidden; }
   .hero h1 em{ display:inline; }
 }
+
+/* WhatsApp : vraie couleur de la marque (#25D366) */
+.foot .btn-wa{ background:#25D366; color:#fff; }
+.foot .btn-wa:hover{ background:#1EBE5A; }
+.ax-tabs #tabWa svg{ color:#25D366; }
