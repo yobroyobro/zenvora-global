@@ -50,7 +50,9 @@ const SHOP_CONFIG = {
     "Cameroun", "Gabon", "Congo-Brazzaville", "RD Congo", "Côte d'Ivoire",
     "Sénégal", "Mali", "Burkina Faso", "Niger", "Bénin", "Togo", "Guinée",
     "Tchad", "Centrafrique", "Guinée équatoriale", "Madagascar", "Burundi",
-    "Rwanda", "Djibouti", "Comores", "Mauritanie", "Maroc", "Algérie", "Tunisie"
+    "Rwanda", "Djibouti", "Comores", "Mauritanie", "Maroc", "Algérie", "Tunisie",
+    "France", "Belgique", "Suisse", "Luxembourg", "Allemagne", "Italie", "Espagne",
+    "Portugal", "Pays-Bas", "Royaume-Uni"
   ],
   /* Modes d'expédition proposés */
   shipping: ["Maritime", "Aérien"]

@@ -325,3 +325,10 @@ html.js-on .hero-head > *{ animation:none; }
 @media (min-width:900px){ .car-slide{ width:180px; } }
 .shelf-track{ grid-auto-columns:min(44vw, 190px); }
 @media (min-width:900px){ .shelf-track{ grid-auto-columns:220px; } }
+
+/* Titre de la bannière : toujours sur une seule ligne en mobile */
+@media (max-width:899px){
+  .hero h1{ white-space:nowrap; font-size:min(17px, calc((100vw - 64px) / 21.8)); letter-spacing:-.01em; }
+  .hero-head{ min-width:0; overflow:hidden; }
+  .hero h1 em{ display:inline; }
+}

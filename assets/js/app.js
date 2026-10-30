@@ -316,12 +316,15 @@
   /* Pays de livraison détecté automatiquement (comme les grandes places de marché) */
   var ISO_FR = {CM:'Cameroun', GA:'Gabon', CG:'Congo-Brazzaville', CD:'RD Congo', CI:"Côte d'Ivoire", SN:'Sénégal', ML:'Mali',
     BF:'Burkina Faso', NE:'Niger', BJ:'Bénin', TG:'Togo', GN:'Guinée', TD:'Tchad', CF:'Centrafrique', GQ:'Guinée équatoriale',
-    MG:'Madagascar', BI:'Burundi', RW:'Rwanda', DJ:'Djibouti', KM:'Comores', MR:'Mauritanie', MA:'Maroc', DZ:'Algérie', TN:'Tunisie'};
+    MG:'Madagascar', BI:'Burundi', RW:'Rwanda', DJ:'Djibouti', KM:'Comores', MR:'Mauritanie', MA:'Maroc', DZ:'Algérie', TN:'Tunisie',
+    FR:'France', BE:'Belgique', CH:'Suisse', LU:'Luxembourg', DE:'Allemagne', IT:'Italie', ES:'Espagne', PT:'Portugal', NL:'Pays-Bas', GB:'Royaume-Uni'};
   var TZ_FR = {'Africa/Douala':'CM', 'Africa/Libreville':'GA', 'Africa/Brazzaville':'CG', 'Africa/Kinshasa':'CD', 'Africa/Lubumbashi':'CD',
     'Africa/Abidjan':'CI', 'Africa/Dakar':'SN', 'Africa/Bamako':'ML', 'Africa/Ouagadougou':'BF', 'Africa/Niamey':'NE', 'Africa/Porto-Novo':'BJ',
     'Africa/Lome':'TG', 'Africa/Conakry':'GN', 'Africa/Ndjamena':'TD', 'Africa/Bangui':'CF', 'Africa/Malabo':'GQ', 'Indian/Antananarivo':'MG',
     'Africa/Bujumbura':'BI', 'Africa/Kigali':'RW', 'Africa/Djibouti':'DJ', 'Indian/Comoro':'KM', 'Africa/Nouakchott':'MR',
-    'Africa/Casablanca':'MA', 'Africa/El_Aaiun':'MA', 'Africa/Algiers':'DZ', 'Africa/Tunis':'TN'};
+    'Africa/Casablanca':'MA', 'Africa/El_Aaiun':'MA', 'Africa/Algiers':'DZ', 'Africa/Tunis':'TN',
+    'Europe/Paris':'FR', 'Europe/Brussels':'BE', 'Europe/Zurich':'CH', 'Europe/Luxembourg':'LU', 'Europe/Berlin':'DE', 'Europe/Rome':'IT',
+    'Europe/Madrid':'ES', 'Europe/Lisbon':'PT', 'Europe/Amsterdam':'NL', 'Europe/London':'GB'};
   var shipSel = $('shipTo');
   function setShipTo(name, save){
     if (!name) return;
